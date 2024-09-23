@@ -174,7 +174,6 @@ void VulkanAppBase::initializeInstance(const char* appName)
     ci.enabledExtensionCount = uint32_t(extensions.size());
     ci.ppEnabledExtensionNames = extensions.data();
     ci.pApplicationInfo = &appInfo;
-
 #ifdef _DEBUG
     // デバッグビルド時には検証レイヤーを有効化
     const char* layers[] = { "VK_LAYER_KHRONOS_validation" };
@@ -184,7 +183,7 @@ void VulkanAppBase::initializeInstance(const char* appName)
         layers[0] = "VK_LAYER_LUNARG_standard_validation";
     }
     ci.enabledLayerCount = 1;
-    ci.ppEnabledExtensionNames = layers;
+    ci.ppEnabledLayerNames = layers;
 #endif
 
     // インスタンス生成
