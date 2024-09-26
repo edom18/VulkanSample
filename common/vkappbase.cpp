@@ -381,7 +381,7 @@ void VulkanAppBase::createDepthBuffer()
     // 取得したメモリサイズを設定
     ai.allocationSize = reqs.size;
 
-    // NOTE: このインデックスはなんだろう・・？
+    // NOTE: このインデックスは、どのメモリ位置でデータ（リソース）を割り当てるかを指定するもの。
     ai.memoryTypeIndex = getMemoryTypeIndex(reqs.memoryTypeBits, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
 
     // 実際にメモリを確保する
